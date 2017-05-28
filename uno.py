@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python
 
 # Uno Card Game v.0.0.2
