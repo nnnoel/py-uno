@@ -461,7 +461,7 @@ class Deck(object):
         pass
 
 
-class Card(Deck):
+class Card(object):
     def __init__(self, color, rank):
         self.color = color
         self.rank = rank
