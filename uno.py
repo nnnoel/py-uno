@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# Uno Card Game v.0.0.2
+# Uno Card Game v.0.0.3
 # Official Rules straight from Wiki: https://en.wikipedia.org/wiki/Uno_(card_game)
 # The aim of the game is to be the first player to score 500 points.
 # This is achieved (usually over several rounds of play) by a player
@@ -29,7 +29,6 @@
     File name: uno.py
     Author: Noel Colon
     Date created: 10/20/2016
-    Date last modified: 10/24/2016
     Python Version: 2.7
 '''
 
@@ -257,7 +256,10 @@ class Game(object):
 
         choice = raw_input(': ')
         if choice:
-            choice = int(choice)
+            try:
+                choice = int(choice)
+            except:
+                choice = 4
 
         if choice in range(1, len(self.turn.hand) + 1) and (self.turn.hand[choice - 1] in playable):
             # proceed to play card
@@ -510,4 +512,5 @@ class Card(object):
 
 # Startup Prompt
 name = raw_input('Uno Card Game v.0.0.2\nName? ')
+name = raw_input('Uno Card Game v.0.0.3\nName? ')
 game = Game(name)
