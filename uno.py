@@ -31,7 +31,7 @@
     Date created: 10/20/2016
     Python Version: 2.7
 '''
-
+import sys
 import random
 import time
 from itertools import cycle, islice, dropwhile
@@ -509,7 +509,14 @@ class Card(object):
     def get_points(self):
         pass
 
+def main():    
+    # Startup Prompt
+    name = raw_input('Uno Card Game v.0.0.3\nName? ')
+    game = Game(name)
 
-# Startup Prompt
-name = raw_input('Uno Card Game v.0.0.3\nName? ')
-game = Game(name)
+if __name__ == '__main__':
+    try:
+        sys.exit(main())
+    except KeyboardInterrupt:
+        sys.exit(1)
+
